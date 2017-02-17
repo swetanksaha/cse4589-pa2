@@ -20,12 +20,16 @@ git clone --no-checkout https://ubwins.cse.buffalo.edu/git/swetankk/cse4589_pa2.
 cd cse4589_pa2 && git config core.sparseCheckout true && echo 'Grader/' >> .git/info/sparse-checkout && git checkout master && cd ..
 
 #Executane list
-exec_files=( run_experiments sanity_tests basic_tests advanced_tests )
+exec_files=( sanity_tests basic_tests advanced_tests )
 
 # Build the executables
+pyinstaller --onefile cse4589_pa2/Grader/run_experiments.py
+cp dist/$exc grader/
+rm run_experiments.spec
+
 for exc in "${exec_files[@]}"
 do
-    pyinstaller --onefile cse4589_pa2/Grader/$exc.py
+    pyinstaller --onefile cse4589_pa2/Grader/$exc.py --hidden-import=$exc
     # Copy the executable
     cp dist/$exc grader/
     # Clean
