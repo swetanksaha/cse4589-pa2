@@ -24,7 +24,7 @@ exec_files=( sanity_tests basic_tests advanced_tests )
 
 # Build the executables
 pyinstaller --onefile cse4589_pa2/Grader/run_experiments.py
-cp dist/$exc grader/
+cp dist/run_experiments grader/
 rm run_experiments.spec
 
 for exc in "${exec_files[@]}"
