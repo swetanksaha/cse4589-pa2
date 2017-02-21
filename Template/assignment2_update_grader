@@ -6,6 +6,6 @@
 #Version         :1.0
 #====================================================================================
 
-cd scripts
+cd grader
 wget --no-check-certificate -r --no-parent -nH --cut-dirs=3 -R index.html https://host/remotepath/grader/
 cd ..
