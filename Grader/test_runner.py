@@ -36,6 +36,7 @@ def RunTest(path, messages, loss, corruption, arrival_t, window, test_suite, tes
     print_regular('Testing with MESSAGES:%s, LOSS:%s, CORRUPTION:%s, ARRIVAL:%s, WINDOW:%s ...' % (messages, loss, corruption, arrival_t, window))
 
     output_fname = ''.join(random.choice(string.ascii_lowercase) for _ in range(6))
+    delete_file(output_fname)
     if not os.path.isfile(path):
         print_error('%s: File does not exist!' % (path))
         return False
@@ -49,16 +50,18 @@ def RunTest(path, messages, loss, corruption, arrival_t, window, test_suite, tes
                                      '-o', output_fname]
 
     signal.signal(signal.SIGALRM, alarm_handler)
+    run_expr_proc = subprocess.Popen(command)
     signal.alarm(TIMEOUT)
     try:
-        delete_file(output_fname)
-        ret_code = subprocess.call(command)
+        run_expr_proc.wait()
+        ret_code = run_expr_proc.returncode
         if ret_code != 0:
             print_error('Program terminated with non-zero exit code!')
             return False
         signal.alarm(0)
     except Alarm:
         print_error('FAIL: Your implementation failed to produce output within: %ss!' % (TIMEOUT))
+        run_expr_proc.kill()
         delete_file(output_fname)
         return False
 
