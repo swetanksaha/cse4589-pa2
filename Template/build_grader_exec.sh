@@ -19,7 +19,7 @@
 git clone --no-checkout https://ubwins.cse.buffalo.edu/git/swetankk/cse4589_pa2.git
 cd cse4589_pa2 && git config core.sparseCheckout true && echo 'Grader/' >> .git/info/sparse-checkout && git checkout master && cd ..
 
-#Executane list
+#Executables list
 exec_files=( sanity_tests basic_tests advanced_tests )
 
 # Build the executables
