@@ -591,6 +591,12 @@ void tolayer5(int AorB,char *datasent)
      printf("\n");
    }
 
+   /* Check for non-existent packet */
+   if (application_msgs[cur_msg_recv].msg_chars[0] == '\0') {
+       printf("PANIC: Unexpected/Non-existent packet!");
+       exit(52);
+   }
+
   /* Check for out-of-order/duplicate packets */
   if (strncmp(application_msgs[cur_msg_recv].msg_chars, datasent, 20) != 0){
     printf("Expected: ");
