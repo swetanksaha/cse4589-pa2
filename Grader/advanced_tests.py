@@ -54,7 +54,6 @@ def check_monotonicity():
     for index in range(0,4):
         diff = (Packets[index] - Packets[index+1])/float(Packets[index])
         if diff < -0.1:
-            print diff
             return False
 
     return True
