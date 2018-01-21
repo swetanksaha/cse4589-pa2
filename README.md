@@ -9,3 +9,4 @@ The [_Grader_](/Grader) directory holds the grader source and usage instructions
 The [_Template_](/Template) directory contains the source for the code template distributed to students (see [here](https://docs.google.com/document/d/1o6epHif2H0--Qhq9uo1dp0tXel5CiSYoYsuFa-s92YU/pub)).
 
 ## Notes
+* The results of the simulator may be different on different systems. If you want to verify the results submitted by the students in their reports, you should provide a host/machine to students to run their simulations.
