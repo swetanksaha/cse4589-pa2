@@ -12,7 +12,7 @@ The [_Template_](/Template) directory contains the source for the code template 
 * The results of the simulator may be different on different systems. If you want to verify the results submitted by the students in their reports, you should provide a host/machine to students to run their simulations.
 ***
 ##### <img src="http://cse4589.github.io/assets/site/images/UB_BLU_RGB.png" width=30></img>
-UB students are assigned one of the following 5 CSE hosts via email by the course instructor
+UB students are assigned one of the following 5 CSE hosts for development, testing, and running the simulations, via email by the course instructor:
 * stones.cse.buffalo.edu
 * euston.cse.buffalo.edu
 * embankment.cse.buffalo.edu
