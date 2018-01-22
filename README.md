@@ -18,3 +18,4 @@ UB students are assigned one of the following 5 CSE hosts for development, testi
 * embankment.cse.buffalo.edu
 * underground.cse.buffalo.edu
 * highgate.cse.buffalo.edu
+***
